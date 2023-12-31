@@ -21,3 +21,5 @@ function fibsRec(n, arr = [0, 1]) {
   }
 }
 console.log(fibsRec(8)); //returns [0, 1, 1, 2, 3, 5, 8, 13]
+
+//the best way to solve is -> reutrn fibRec(n-1) + fibRec(n-2) -> will return the last number in the fibonacci series
