@@ -144,15 +144,15 @@ const tree = (function () {
   }
 
   // number of nodes crossed before reaching the required node
-  function depth(root, value, height = 0) {
+  function depth(root, value, depthVal = 0) {
     if (root.data == value) {
-      return height;
+      return depthVal;
     }
-    height++;
+    depthVal++;
     if (value < root.data) {
-      return depth(root.left, value, height);
+      return depth(root.left, value, depthVal);
     } else if (value > root.data) {
-      return depth(root.right, value, height);
+      return depth(root.right, value, depthVal);
     }
   }
 
@@ -195,6 +195,8 @@ function driverCode(arr) {
   console.log('Pre Order: ', tree.preOrder(rootNode));
   console.log('In Order: ', tree.inOrder(rootNode));
   console.log('Post Order: ', tree.postOrder(rootNode));
+  console.log('Height of tree: ', tree.height(rootNode));
+  console.log('Depth of the tree: ', tree.depth(rootNode, 1));
 }
 
 driverCode([1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324]);
